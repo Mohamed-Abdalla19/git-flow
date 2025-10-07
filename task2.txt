@@ -1,0 +1,79 @@
+Task 2
+
+Q1: Explain what git stash does and when it is useful.
+A1: The `git stash` command temporarily saves (or "stashes") your uncommitted changes—both staged and unstaged—so that you can switch branches or work on something else without committing them. It’s useful when you need to quickly fix a bug or test something on another branch without losing your ongoing work.
+
+---
+
+Q2: Use git stash to temporarily save uncommitted changes.
+A2: 
+Command:
+    git stash save "Working on new feature before bug fix"
+
+This saves all tracked changes in the working directory and staging area.
+
+---
+
+Q3: List and describe the stashed changes.
+A3: 
+Command:
+    git stash list
+
+Each entry shows a stash index, the branch it came from, and the custom message (if any).
+
+---
+
+Q4: Restore stashed changes using the appropriate command.
+A4:
+Command:
+    git stash apply
+
+This reapplies the most recent stash to your working directory but keeps it in the stash list.
+
+---
+
+Q5: Apply and remove a specific stash.
+A5:
+Command:
+    git stash pop stash@{0}
+
+This applies the specific stash and then removes it from the stash list once applied successfully.
+
+---
+
+Q6: Drop or clear all stashes from the stash list.
+A6:
+command:
+    git stash clear
+
+---
+
+Q7: What happens when you use git stash pop vs git stash apply?
+A7:
+    git stash apply: Reapplies the stash but keeps it in the stash list.
+    git stash pop: Reapplies the stash and removes it from the stash list after applying.
+
+---
+
+Q8: What is the purpose of git stash save "message"?
+A8:
+It allows you to add a descriptive message to the stash
+
+---
+
+Q9: How can you stash changes for specific files instead of the entire working directory?
+A9:
+Command:
+    git stash push f1 f2
+
+This stashes only the specified files instead of all changes.
+
+---
+
+Q10: How can you check which files were affected in a particular stash?
+A10:
+Command:
+    git stash show stash@{0}
+For detailed changes:
+    git stash show -p stash@{0}
+This displays the files and diffs included in that stash.
